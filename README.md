@@ -35,7 +35,7 @@ git version 2.15.1
 * Dont't bother about package names, caching meta data and other subtelities of your package manager: just type `noapt <program-name>`
 * `noapt ag` is shorter than `sudo apt install silversearcher-ag`
 
-## Updating
+## Updating installed packages
 No really nice solution yet: delete all build cache with `plash purge` and it will be rebuiled on demand.
 
 ## The bad parts
