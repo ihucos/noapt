@@ -33,7 +33,7 @@ git version 2.15.1
 * You don't like to use root access very often
 * Install programs without cluttering your system
 * Dont't bother about package names, caching meta data and other subtelities of your package manager: just type `noapt <program-name>`
-* `noapt ag` is shorter than `sudo apt install the_silver_searcher`
+* `noapt ag` is shorter than `sudo apt install silversearcher-ag`
 
 ## Updating
 No really nice solution yet: delete all build cache with `plash purge` and it will be rebuiled on demand.
