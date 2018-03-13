@@ -3,7 +3,7 @@ Is a small wrapper around `plash`, that lets you install ubuntu packages in your
 
 ## Install
 ```
-pip3 install noapt
+pip3 install noapt --user
 ```
 
 ## Example
