@@ -24,7 +24,7 @@ $ ~/bin/git --version
 git version 2.15.1                                                                                                             
 ```
 ## How does that work?
-`noapt` itself is just ~50 lines intense but comparably robust shell scripting. The heavy lifiting is done by [plash](https://github.com/ihucos/plash/), which is a container engine.
+`noapt` itself is just ~50 lines intense but comparably robust shell scripting. The heavy lifting is done by [plash](https://github.com/ihucos/plash/), which is a container engine.
 
 ## Use cases
 * Run non LTS packages in a LTS system
