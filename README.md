@@ -32,3 +32,7 @@ git version 2.15.1
 * You don't have root access
 * You don't like to use root access very often
 * Install programs without cluttering your system
+* Dont't bother about package names, just type `noapt $executablename`
+
+# Updating
+No really nice solution yet: delete all build cache with `plash purge` and it will be rebuiled on demand.
