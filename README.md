@@ -1,0 +1,25 @@
+# noapt
+Is a small wrapper around plash, that lets you install ubuntu packages in your home folder. It does not acutaly need an ubuntu system and it can be used by non-privileged users.
+
+# Install
+```
+pip3 install noapt
+```
+
+# Example
+```
+$ noapt                                                                                              
+missing argument: programm name                                                                                                
+$ noapt git                                                                                          
+## searching package for: git                                                                                                  
+## caching package: git                                                                                                        
+<cut output>
+Setting up git (1:2.15.1-1ubuntu2) ...                                                                                         
+Processing triggers for libc-bin (2.27-0ubuntu2) ...                                                                           
+--:                                                                                                                            
+## executable: ~/bin/git                                                                                                       
+## disk usage: 80M                                                                                                             
+## to uninstall run: plash rm -I ~/bin/git && rm ~/bin/git                                                                     
+$ ~/bin/git --version                                                                            
+git version 2.15.1                                                                                                             
+```
