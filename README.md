@@ -43,5 +43,5 @@ No really nice solution yet: delete all build cache with `plash purge` and it wi
 * I think fuse being slow is not too bad, the main work is expected to be done in /home, which is rbind mounted from container to host
 * unionfs-fuse does not work perfectly with this setup: https://github.com/rpodgorny/unionfs-fuse/issues/78
 * ~50 lines shell scripting
-* It's not magic: the package runs in an isolated container where /home and /tmp is mounted. It will not work with anything overly complicated.
+* It's not magic: the package runs in an isolated container where `/home` and `/tmp` is mounted to the host. It will not work with anything overly complicated.
 
