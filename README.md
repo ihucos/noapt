@@ -42,4 +42,5 @@ No really nice solution yet: delete all build cache with `plash purge` and it wi
 * On my system 1.3 seconds startup time is just too much. That is absolutely optimizable, it comes mainly from slow python imports.
 * I think fuse being slow is not too bad, the main work is expected to be done in /home, which is rbind mounted from container to host
 * unionfs-fuse does not work perfectly with this setup: https://github.com/rpodgorny/unionfs-fuse/issues/78
+* ~50 lines shell scripting
 
