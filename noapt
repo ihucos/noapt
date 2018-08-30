@@ -13,7 +13,7 @@ test -z "$binname" && ( echo "missing argument: programm name"; exit 1 )
 
 echo "## searching package for: $binname"
 plash init
-package=$(plash run -i ubuntu --run "$INSTALL_SCRIPT command-not-found" -- python3 -c "
+package=$(plash run -f ubuntu --run "$INSTALL_SCRIPT command-not-found" -- python3 -c "
 import sys;
 from CommandNotFound.CommandNotFound import  CommandNotFound;
 found = CommandNotFound().get_packages(sys.argv[-1]);
@@ -22,7 +22,7 @@ test -z "$package" && ( echo "## error: no package found"; exit 1 )
 
 echo "## caching package: $package"
 path='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
-binpath=$(plash run -i ubuntu --run "$INSTALL_SCRIPT $package" -- env PATH=$path which "$binname")
+binpath=$(plash run -f ubuntu --run "$INSTALL_SCRIPT $package" -- env PATH=$path which "$binname")
 test -z "$binpath" && ( echo "## internal error: could not find binary for package: $package"; exit 1 )
 
 hostbin=~/bin/"$binname"
@@ -30,17 +30,17 @@ mkdir -p ~/bin
 #echo "## writing recipe to $hostbin"
 cat >"$hostbin" <<EOL
 #!/usr/bin/env plash-exec
-# plash-exec: exec=$binpath
---image
+--entrypoint $binpath
+--from
 ubuntu
 --run
 $INSTALL_SCRIPT $package
 EOL
 chmod 755 "$hostbin"
 
-nodepath=$(plash nodepath --include $hostbin)
+nodepath=$(plash nodepath --eval-file $hostbin)
 disk_used=$(du -sh "$nodepath" | cut -f1)
 
 echo "## executable: ~/bin/$binname"
 echo "## disk usage: $disk_used"
-echo "## to uninstall run: plash rm -I ~/bin/$binname && rm ~/bin/$binname"
+echo "## to uninstall run: plash rm --eval-file ~/bin/$binname && rm ~/bin/$binname"
