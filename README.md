@@ -19,7 +19,7 @@ Processing triggers for libc-bin (2.27-0ubuntu2) ...
 --:                                                                                                                            
 ## executable: ~/bin/git                                                                                                       
 ## disk usage: 80M                                                                                                             
-## to uninstall run: plash rm -I ~/bin/git && rm ~/bin/git                                                                     
+## to uninstall run: plash rm --eval-file ~/bin/git && rm ~/bin/git                                                                     
 $ ~/bin/git --version                                                                            
 git version 2.15.1                                                                                                             
 ```
