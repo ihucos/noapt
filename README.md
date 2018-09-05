@@ -38,7 +38,8 @@ git version 2.15.1
 ## Updating installed packages
 No really nice solution yet: delete all build cache with `plash purge` and it will be rebuiled on demand.
 
-## The bad parts
+## Caveats
+* Plashs chmod/chown is broken until linux 4.18 and adaptations (so apt fails mostly!)
 * On my system 1.3 seconds startup time is just too much. That is absolutely optimizable, it comes mainly from slow python imports.
 * I think fuse being slow is not too bad, the main work is expected to be done in /home, which is rbind mounted from container to host
 * ~50 lines shell scripting
