@@ -32,7 +32,7 @@ git version 2.15.1
 * You don't have root access
 * You don't like to use root access very often
 * Install programs without cluttering your system
-* Dont't bother about package names, caching meta data and other subtelities of your package manager: just type `noapt <program-name>`
+* Dont't bother about package names, caching meta data and other subtelities of your package manager: just type `noapt <executable-name>`
 * `noapt ag` is shorter than `sudo apt install silversearcher-ag`
 
 ## Updating installed packages
